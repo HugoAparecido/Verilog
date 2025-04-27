@@ -4,14 +4,14 @@ module top (input mtpx, input mtpy, output mtpz);
     // Implemente a primeira parte do circuito usando os módulos ma e mb
     // Preste atenção nas portas desconectadas 
     ma ia1(.mapz(a1), .mapx(mtpx));
-    mb ib1(.mapz(b1), .mapx(mtpx), .mapy(mtpy));
-    ma ia2(.mapz(a2), .mapx(mtpy), .mapy(mtpy));
-    mb ib2(.mapz(b2), .mapy(mtpy));
+    mb ib1(.mbpz(b1), .mbpx(mtpx), .mbpy(mtpy));
+    ma ia2(.mapz(a2), .mapx(mtpx), .mapy(mtpy));
+    mb ib2(.mbpz(b2), .mbpy(mtpy));
 
     // Implemente a segunda parte do circuito usando primitivas da linguagem
     
-    or a1b1(a1, b1);
-    and a2b2(a2, b2);
-    xor mtpz(a1b1, a2b2);
+    or (a1b1, a1, b1);
+    and (a2b2, a2, b2);
+    xor (mtpz, a1b1, a2b2);
     
 endmodule
