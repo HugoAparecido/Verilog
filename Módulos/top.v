@@ -4,8 +4,8 @@ module top (input mtpx, input mtpy, output mtpz);
     // Implemente a primeira parte do circuito usando os módulos ma e mb
     // Preste atenção nas portas desconectadas 
     ma ia1(.mapz(a1), .mapx(mtpx));
-    mb ib1(.mbpz(b1), .mbpx(mtpx), .mbpy(mtpy));
-    ma ia2(.mapz(a2), .mapx(mtpx), .mapy(mtpy));
+    mb ib1(mtpx, mtpy, b1);
+    ma ia2(mtpx, mtpy, a2);
     mb ib2(.mbpz(b2), .mbpy(mtpy));
 
     // Implemente a segunda parte do circuito usando primitivas da linguagem
