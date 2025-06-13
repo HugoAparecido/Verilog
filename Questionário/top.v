@@ -7,3 +7,15 @@ module counter(
   tff q1 (clk, rst,  count[0], count[1], ncount[1]);
   tff q2 (clk, rst, ncount[1], count[2], ncount[2]);
 endmodule
+
+module tff(
+    input clk, rst, T,
+    output reg Q);
+
+    always@(posedge clk)
+        if (rst)
+            Q = 'b0;
+        else
+            if (T)
+                Q = ~Q;
+endmodule
