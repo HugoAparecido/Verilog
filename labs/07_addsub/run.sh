@@ -1,1 +1,0 @@
-iverilog sum4bits.v addsub4bits.v tb_sum4bits.v full_adder.v && ./a.out
