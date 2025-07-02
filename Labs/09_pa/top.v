@@ -1,6 +1,6 @@
 /* Bancada:
 844917 Hugo Aparecido
-846975 Eduard Kobayashi
+846975 Eduardo Kobayashi
 
 1. Com que frequência este contator conta?
 R: Aproximadamente 1Hertz
@@ -14,7 +14,7 @@ module top(
     input sysclk, // 125MHz
     input [3:0] SW, 
     output [6:0] HEX0,
-    output [3:0] jb, jc); 
+    output [3:0] jb, jc);
 
     wire [6:0] segs;
     wire [3:0] val;
