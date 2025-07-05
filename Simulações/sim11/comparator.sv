@@ -13,7 +13,7 @@ module comparator (X, Y, V, N, Z); // figure3.47.v
 	generate
 		for (k = 0; k < n;  k = k + 1)
 		begin
-            assign Y_comp[k] = ~Y[k];
+            // assign Y_comp[k] = ~Y[k];
 			assign S[k] = X[k] ^ ~Y[k] ^ C[k];
 			assign C[k+1] = (X[k] & ~Y[k]) | (X[k] & C[k]) | (~Y[k] & C[k]);
 		end
@@ -21,6 +21,6 @@ module comparator (X, Y, V, N, Z); // figure3.47.v
     
 	assign V  = C[n] ^ C[n-1]; 
 	assign N = S[n-1]; 
-	assign Z = (S == {N{1'b0}});
+	assign Z = (S == {n{1'b0}});
 
 endmodule
