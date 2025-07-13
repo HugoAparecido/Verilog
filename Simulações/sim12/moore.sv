@@ -11,8 +11,12 @@ module moore (
     reg [2:0] estado_atual;
     reg [2:0] proximo_estado;
 
+    initial begin
+        estado_atual = S0;
+    end
+
     always @(posedge clk or negedge rst) begin
-        if(!rst) begin
+        if(rst) begin
             estado_atual <= S0;
         end else begin
             estado_atual <= proximo_estado;

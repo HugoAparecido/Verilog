@@ -12,7 +12,7 @@ module mealy (
     reg [1:0] proximo_estado;
 
     always @(posedge clk or negedge rst) begin
-        if(!rst) begin
+        if(rst) begin
             estado_atual <= S0;
         end else begin
             estado_atual <= proximo_estado;
